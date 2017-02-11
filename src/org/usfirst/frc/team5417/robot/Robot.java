@@ -49,17 +49,18 @@ public class Robot extends SampleRobot {
 	List<BooleanMatrix> horizontalTemplates = new ArrayList<BooleanMatrix>();
 	List<BooleanMatrix> verticalTemplates = new ArrayList<BooleanMatrix>();
 
-	int dilateErodeKernelSize = 7;
+	int dilateErodeKernelSize = 3;
 	int removeGroupsSmallerThan = 12;
-	int numberOfScaleFactors = 10;
+	int numberOfScaleFactors = 20;
 	double minimumTemplateMatchPercentage = 0.7;
 
 	// dummy PID that wants to approach 4 feet
 	// private PID distancePID = new PID(1, 20000, 0, PIDSourceType.kRate, 4);
 
-	double[] gearLookUpTable = { 500, // 0 feet
-			199, // 1 foot
-			110, 77.5, 57, 45.5, 39, 33, 29, 25 // 9 feet
+	double[] gearLookUpTable = { 250, // 0 feet
+			104, // 1 foot
+			53.7, 37.5, 28, 22.5, 19, 16.4, 14.2, 12.4, 11.6, 10.6, // 11 feet
+			0 // BEYOND
 	};
 
 	RobotDrive myRobot = new RobotDrive(0, 1); // class that handles basic drive
